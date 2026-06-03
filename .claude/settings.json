@@ -1,8 +1,26 @@
 {
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
-    "command": "node ~/.claude/statusline-command.js",
-    "alwaysShow": true
+    "command": "node ~/.claude/statusline-command.js"
+  },
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
@@ -16,9 +34,15 @@
         "source": "github",
         "repo": "anthropics/claude-code"
       }
+    },
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
     }
   },
-  "enabledPlugins": {
-    "ralph-wiggum@claude-code-plugins": true
-  }
+  "effortLevel": "high",
+  "autoMemoryEnabled": false,
+  "skipAutoPermissionPrompt": true
 }
